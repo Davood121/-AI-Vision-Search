@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Vision Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1><i class="fa-solid fa-eye"></i> AI Vision Search</h1>
+            <p>Show me a photo, and I'll tell you what I know.</p>
+        </header>
+
+        <main>
+            <div class="upload-zone" id="uploadZone">
+                <input type="file" id="fileInput" accept="image/*" hidden>
+                <div class="upload-content">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <h3>Drag & Drop or Click to Upload</h3>
+                    <p>Supports JPG, PNG, WEBP</p>
+                </div>
+                <div class="preview-container" id="previewContainer" style="display: none;">
+                    <img id="imagePreview" src="" alt="Preview">
+                    <button class="remove-btn" id="removeBtn"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+            </div>
+
+            <button id="analyzeBtn" class="primary-btn" disabled>
+                <span class="btn-text">Analyze & Search</span>
+                <span class="btn-loader"><i class="fa-solid fa-circle-notch fa-spin"></i></span>
+            </button>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="ai-insight">
+                    <h2><i class="fa-solid fa-robot"></i> AI Analysis</h2>
+                    <p id="analysisText" class="typing-effect"></p>
+                </div>
+
+                <div class="ai-report" id="reportContainer" style="display: none;">
+                    <h2><i class="fa-solid fa-brain"></i> Deep Dive Report</h2>
+                    <div id="reportContent" class="markdown-body"></div>
+                </div>
+
+                <div class="search-results">
+                    <h2><i class="fa-solid fa-globe"></i> Web Findings</h2>
+                    <div id="resultsList" class="results-grid">
+                        <!-- Results will be injected here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
