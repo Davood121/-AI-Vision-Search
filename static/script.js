@@ -127,10 +127,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (data.results && data.results.length > 0) {
             data.results.forEach(result => {
                 const card = document.createElement('div');
-                card.className = 'result-card';
+                card.className = 'result-item';
                 card.innerHTML = `
-                    <h3><a href="${result.href}" target="_blank">${result.title}</a></h3>
-                    <p>${result.body}</p>
+                    <div class="result-title"><a href="${result.href}" target="_blank">${result.title}</a></div>
+                    <div class="result-url">${result.href}</div>
+                    <div class="result-snippet">${result.body}</div>
                 `;
                 resultsList.appendChild(card);
             });

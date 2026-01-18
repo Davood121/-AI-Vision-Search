@@ -256,46 +256,46 @@ header p {
     gap: 10px;
 }
 
-.results-grid {
-    display: grid;
-    gap: 1rem;
+.results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-.result-card {
-    background: rgba(255, 255, 255, 0.03);
-    padding: 1.2rem;
-    border-radius: 12px;
-    transition: all 0.2s ease;
-    border: 1px solid transparent;
+.result-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.result-card:hover {
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.1);
-    transform: translateX(5px);
+.result-item:last-child {
+    border-bottom: none;
 }
 
-.result-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-}
-
-.result-card a {
-    color: #4cc9f0;
+.result-title a {
+    color: #1a0dab;
     text-decoration: none;
-    transition: color 0.2s;
+    font-size: 1.2rem;
+    font-weight: 400;
 }
 
-.result-card a:hover {
-    color: #4895ef;
+.result-title a:hover {
     text-decoration: underline;
 }
 
-.result-card p {
+.result-url {
+    color: #006621;
+    font-size: 0.9rem;
+    margin: 0.2rem 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.result-snippet {
+    color: #545454;
     font-size: 0.95rem;
-    color: var(--text-muted);
-    line-height: 1.5;
-    margin-top: 0.5rem;
+    line-height: 1.4;
+    margin-top: 0.3rem;
 }
 
 /* Report Section */
